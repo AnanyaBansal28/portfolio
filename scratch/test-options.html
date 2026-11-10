@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #0a090c;
+      color: white;
+      font-family: sans-serif;
+      padding: 140px;
+      display: flex;
+      gap: 40px;
+    }
+    .parent {
+      position: relative;
+      width: 320px;
+    }
+    .card {
+      width: 100%;
+      height: 250px;
+      background: #1c080d;
+      border: 1px solid rgba(114, 28, 36, 0.5);
+      border-radius: 24px;
+      position: relative;
+      padding: 24px;
+    }
+    .card-border-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <!-- Option 1: image pushed so hands align with card border line -->
+  <div class="parent">
+    <h4>Option 1: translate-y to align hands to border</h4>
+    <div style="position: absolute; top: -72px; right: 32px; z-index: 20; pointer-events: none; width: 90px; height: auto; border: 1px dashed cyan;">
+      <!-- image with offset so hands at row 316 hit 72px -->
+      <img src="../public/peeking-avatar.png" style="width: 90px; height: auto; display: block; margin-top: 23px;" />
+    </div>
+    <div class="card">
+      <div class="card-border-line"></div>
+      <div style="color: #fef08a; font-size: 12px; margin-top: 10px;">Option 1</div>
+    </div>
+  </div>
+
+  <!-- Option 2: Image cropped to row 316, so bottom of image is the hands -->
+  <div class="parent">
+    <h4>Option 2: cropped to hands, top: -auto</h4>
+    <div style="position: absolute; bottom: 100%; right: 32px; z-index: 20; pointer-events: none; width: 90px;">
+      <div style="width: 90px; height: 49px; overflow: hidden; position: relative;">
+        <img src="../public/peeking-avatar.png" style="width: 90px; height: auto; position: absolute; top: 0; left: 0;" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-border-line"></div>
+      <div style="color: #fef08a; font-size: 12px; margin-top: 10px;">Option 2</div>
+    </div>
+  </div>
+
+  <!-- Option 3: Base class absolute -top-[72px] right-8 z-20 pointer-events-none w-[90px] h-auto, image scaled to fit 72px height to hands -->
+  <div class="parent">
+    <h4>Option 3: Scale image so hands reach 72px</h4>
+    <div style="position: absolute; top: -72px; right: 32px; z-index: 20; pointer-events: none; width: 90px; height: auto; border: 1px dashed cyan;">
+      <div style="width: 90px; height: 72px; overflow: hidden; position: relative;">
+        <img src="../public/peeking-avatar.png" style="width: 131px; height: auto; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) translateY(26%);" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-border-line"></div>
+      <div style="color: #fef08a; font-size: 12px; margin-top: 10px;">Option 3</div>
+    </div>
+  </div>
+</body>
+</html>
+

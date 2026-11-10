@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #0a090c;
+      color: white;
+      font-family: sans-serif;
+      padding: 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .book {
+      width: 900px;
+      height: 500px;
+      position: relative;
+      perspective: 1500px;
+      background: #140509;
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+      display: flex;
+    }
+    .left-page, .right-page {
+      width: 50%;
+      height: 100%;
+      background: #121118;
+      background-image: 
+        linear-gradient(rgba(254, 240, 138, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(254, 240, 138, 0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
+      padding: 24px;
+      position: relative;
+    }
+    .left-page {
+      border-radius: 16px 0 0 16px;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-right: none;
+    }
+    .right-page {
+      border-radius: 0 16px 16px 0;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-left: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="book">
+    <div class="left-page">Left Page Content</div>
+    <div class="right-page">Right Page Content</div>
+  </div>
+</body>
+</html>
+

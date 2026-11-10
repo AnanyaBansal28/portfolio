@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #0a090c;
+      color: white;
+      font-family: sans-serif;
+      padding: 120px;
+      display: flex;
+      justify-content: center;
+    }
+    .parent {
+      position: relative;
+      width: 600px;
+    }
+    .card {
+      width: 100%;
+      height: 350px;
+      background: #1c080d;
+      border: 1px solid rgba(114, 28, 36, 0.5);
+      border-radius: 24px;
+      position: relative;
+      padding: 24px;
+    }
+    .peeker-1 {
+      position: absolute;
+      top: -72px;
+      right: 32px;
+      width: 90px;
+      height: auto;
+      border: 1px dashed cyan;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="peeker-1">
+      <img src="../public/peeking-avatar.png" style="width: 100%; height: auto; display: block;" />
+    </div>
+    <div class="card">
+      <div style="color: #fef08a;">Top Border of Card is right here</div>
+    </div>
+  </div>
+</body>
+</html>
+

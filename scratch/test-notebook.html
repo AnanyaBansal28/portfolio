@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #0a090c;
+      color: #f4f4f5;
+      font-family: system-ui, sans-serif;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .notebook-cover {
+      width: 1000px;
+      height: 520px;
+      background: #140509;
+      border: 1px solid rgba(254, 240, 138, 0.25);
+      border-radius: 28px;
+      padding: 14px;
+      box-shadow: 0 35px 80px rgba(0,0,0,0.95), 0 0 50px rgba(114, 28, 36, 0.3);
+      position: relative;
+    }
+    .notebook-paper {
+      width: 100%;
+      height: 100%;
+      background: #121118;
+      background-image: 
+        linear-gradient(rgba(254, 240, 138, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(254, 240, 138, 0.035) 1px, transparent 1px);
+      background-size: 20px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .spine {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 32px;
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      pointer-events: none;
+    }
+    .ring {
+      width: 24px;
+      height: 10px;
+      background: linear-gradient(180deg, #d4d4d8 0%, #71717a 50%, #27272a 100%);
+      border-radius: 9999px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.7), inset 0 1px 1px rgba(255,255,255,0.8);
+      position: relative;
+    }
+    .page {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .page-left {
+      border-right: 1px solid rgba(255,255,255,0.06);
+      box-shadow: inset -15px 0 25px -15px rgba(0,0,0,0.6);
+    }
+    .page-right {
+      box-shadow: inset 15px 0 25px -15px rgba(0,0,0,0.6);
+    }
+    .dog-ear {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, transparent 50%, rgba(254, 240, 138, 0.25) 50%);
+      cursor: pointer;
+      border-top-left-radius: 6px;
+      transition: all 0.2s;
+    }
+    .dog-ear:hover {
+      background: linear-gradient(135deg, transparent 50%, rgba(254, 240, 138, 0.5) 50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="notebook-cover">
+    <div class="notebook-paper">
+      <!-- Spine Spiral Rings -->
+      <div class="spine">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+      </div>
+
+      <!-- Left Page: Lab Specs -->
+      <div class="page page-left">
+        <div>
+          <div style="font-family: monospace; font-size: 11px; color: #fef08a; letter-spacing: 0.15em; font-weight: 700;">
+            [ LAB NOTE: ENTRY #01 • 2024 ]
+          </div>
+          <div style="font-size: 24px; font-weight: 800; color: #ffffff; margin-top: 6px; letter-spacing: -0.02em;">
+            PIKSY — Smart Grocery Cart Optimizer
+          </div>
+          <div style="display: inline-block; font-size: 10px; font-family: monospace; color: #fde047; background: rgba(254,240,138,0.12); border: 1px solid rgba(254,240,138,0.3); padding: 2px 8px; border-radius: 9999px; margin-top: 6px; font-weight: 600;">
+            ✦ Quick-Commerce Arbitrage Engine
+          </div>
+
+          <div style="margin-top: 18px; font-size: 12px; line-height: 1.6; color: #d4d4d8;">
+            <div style="color: #a1a1aa; font-family: monospace; font-size: 10px; text-transform: uppercase; margin-bottom: 4px;">Problem Statement:</div>
+            Shoppers across Blinkit, Zepto, and Instamart face 18-35% price discrepancies, surge fees, and hidden delivery thresholds.
+          </div>
+
+          <div style="margin-top: 12px; font-size: 12px; line-height: 1.6; color: #d4d4d8;">
+            <div style="color: #a1a1aa; font-family: monospace; font-size: 10px; text-transform: uppercase; margin-bottom: 4px;">Solution & Core Architecture:</div>
+            Proprietary split-basket knapsack algorithm that normalizes real-time product catalogs, applies dynamic coupon deduction, and partitions shopping lists into optimal multi-vendor deliveries under 10-minute SLAs.
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; flex-wrap: gap: 6px; gap: 6px;">
+            <span style="font-size: 10px; font-family: monospace; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 6px; color: #e4e4e7;">Next.js 16</span>
+            <span style="font-size: 10px; font-family: monospace; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 6px; color: #e4e4e7;">TypeScript</span>
+            <span style="font-size: 10px; font-family: monospace; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 6px; color: #e4e4e7;">Tailwind CSS</span>
+            <span style="font-size: 10px; font-family: monospace; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 6px; color: #e4e4e7;">Knapsack Algo</span>
+          </div>
+          <div style="font-size: 10px; font-family: monospace; color: #71717a; margin-top: 10px;">
+            PAGE 01 / 04
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Page: Blueprint & Output -->
+      <div class="page page-right">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-family: monospace; font-size: 10px; color: #fef08a; text-transform: uppercase;">[ BLUEPRINT & METRICS ]</span>
+            <span style="font-size: 10px; font-family: monospace; color: #10b981; display: flex; align-items: center; gap: 4px;">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>
+              Active Build
+            </span>
+          </div>
+
+          <!-- Mockup Frame -->
+          <div style="background: rgba(0,0,0,0.6); border: 1px solid rgba(254,240,138,0.2); border-radius: 14px; padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 11px; font-family: monospace;">
+              <span>Basket Optimization Sim</span>
+              <span style="color: #fef08a; font-weight: 700;">-28% Net Cost</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; text-align: center;">
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 8px; border-radius: 8px;">
+                <div style="font-size: 10px; color: #a1a1aa; font-family: monospace;">Blinkit</div>
+                <div style="font-size: 13px; font-weight: 700; color: #ffffff; margin-top: 2px;">₹240</div>
+                <div style="font-size: 9px; color: #fde047;">4 items</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 8px; border-radius: 8px;">
+                <div style="font-size: 10px; color: #a1a1aa; font-family: monospace;">Zepto</div>
+                <div style="font-size: 13px; font-weight: 700; color: #ffffff; margin-top: 2px;">₹185</div>
+                <div style="font-size: 9px; color: #fde047;">3 items</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 8px; border-radius: 8px;">
+                <div style="font-size: 10px; color: #a1a1aa; font-family: monospace;">Instamart</div>
+                <div style="font-size: 13px; font-weight: 700; color: #ffffff; margin-top: 2px;">₹95</div>
+                <div style="font-size: 9px; color: #fde047;">1 item</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Metrics -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px;">
+            <div style="background: rgba(114,28,36,0.3); border: 1px solid rgba(254,240,138,0.25); border-radius: 10px; padding: 10px;">
+              <div style="font-size: 10px; font-family: monospace; color: #fef08a;">Cart Efficiency</div>
+              <div style="font-size: 16px; font-weight: 800; color: #ffffff;">Up to 32%</div>
+            </div>
+            <div style="background: rgba(114,28,36,0.3); border: 1px solid rgba(254,240,138,0.25); border-radius: 10px; padding: 10px;">
+              <div style="font-size: 10px; font-family: monospace; color: #fef08a;">Delivery Window</div>
+              <div style="font-size: 16px; font-weight: 800; color: #ffffff;">&lt; 10 Mins</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; gap: 10px;">
+            <button style="flex: 1; padding: 10px; background: linear-gradient(90deg, #fef08a, #fde047); color: #09090b; font-weight: 700; font-size: 12px; border-radius: 8px; border: none; cursor: pointer;">
+              Explore Case Study ↗
+            </button>
+            <button style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 12px; border-radius: 8px; cursor: pointer;">
+              GitHub ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Dog Ear Turn Page Button -->
+        <div class="dog-ear" title="Turn Page →"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
